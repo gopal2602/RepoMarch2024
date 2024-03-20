@@ -13,6 +13,22 @@ Feature: User Module test scripts
     And User logouts from the application
 
 
+
+  @Regression001
+  Scenario: Verify create and delete user functionality3
+    Given User navigates the URL
+    Then User perform login with valid credentials
+    And User verify login is successful
+    Then User creates new user in the actiTime
+      | User_FirstName | User_LastName | User_Email       | User_UserName | User_Password | User_RetypePassword |
+      | SG1            | user1         | sg1.user1@sg.com | sguser1       | Mercury1      | Mercury1            |
+      | SG2            | user2         | sg2.user2@sg.com | sguser2       | Mercury1      | Mercury1            |
+    Then verify user is deleted successful
+    And User logouts from the application
+
+
+
+
   @Regression002
   Scenario Outline: Verify create and delete user functionality2
     Given User navigates the "<URL>" URL
